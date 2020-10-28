@@ -1,0 +1,76 @@
+import tkinter as tkr
+from tkinter.filedialog import askdirectory
+import os import pygame
+
+
+
+musicplayer =tkr.Tk()
+musicplayer.title("Music Player")
+musicplayer.geometry("")
+directroy=askdirectory()
+os.chdir(directroy)
+songlist=os.listdir()
+playlist=tkr.Listbox(musicplayer,font="Helvetica  12  bold",bg="yellow",selectmode=tkr.SINGLE)
+
+
+for item in songlist:
+pos=0
+playlist.insert(pos,item)
+pos=pos+1
+
+pygame.init()
+pygame.mixer.init()
+
+def play():
+pygame.mixer.music.load(playlist.get(tkr.ACTIVE))
+var.set(playlist.get(tkr.ACTIVE))
+pygame.mixer.music.play()
+
+def ExitMusicPlayer():
+pygame.mixer.music.stop()
+
+def pause():
+pygame.mixer.music.pause()
+
+def unpause():
+pygame.mixer.music.unpause()
+
+
+
+def up():
+pygame.mixer.music.up()
+
+def down():
+pygame.mixer.music.down()
+
+
+
+Button1=tkr.Button(musicplayer,width=5,height=3,font="Helvetica 12 bold",text="PLAY",command=play,bg="red",fg="white")
+Button2=tkr.Button(musicplayer,width=5,height=3,font="Helvetica 12 bold",text="STOP",command=ExitMusicPlayer,bg="purple",fg="white")
+Button3=tkr.Button(musicplayer,width=5,height=3,font="Helvetica 12 bold",text="PAUSE",command=pause,bg="green",fg="white")
+Button4=tkr.Button(musicplayer,width=5,height=3,font="Helvetica 12 bold",text="UNPAUSE",command=unpause,bg="blue",fg="white")
+Button5=tkr.Button(musicplayer,width=5,height=3,font="Helvetica 12 bold",text="UP",command=up,bg="blue",fg="white")
+Button6=tkr.Button(musicplayer,width=5,height=3,font="Helvetica 12 bold",text="DOWN",command=down,bg="blue",fg="white")
+
+
+
+
+var=tkr.StringVar()
+songlist=tkr.Label(musicplayer,font="Helvetica 20 bold",textvariable=var)
+
+songlist.pack()
+Button1.pack(fill="x")
+Button2.pack(fill="x")
+Button3.pack(fill="x")
+Button4.pack(fill="x")
+Button5.pack(fill="x")
+Button6.pack(fill="x")
+
+playlist.pack(fill="both",expand="yes")
+
+musicplayer.mainloop()
+
+
+
+
+

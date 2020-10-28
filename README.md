@@ -46,7 +46,6 @@
 
 ## <div align="center"> 🥳 Congratulations!! 🥳 </div>
 ## <div align="center">🙌🙌You just created your 1st PR🙌🙌</div>
-##
 
 #### Now you just have to repeat the steps 4 to 8 for 3 more times with different programs in order to be eligible for a free T-shirt👕 and stickers🤩.
 ##

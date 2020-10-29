@@ -2,36 +2,37 @@
 #define MAXSIZE 7
 #define TRUE 1
 #define FALSE 0
-
-
 struct node {
 int info[MAXSIZE];
 int top;
 };
 
-
 struct node s;
 
-
-
-initialize(){
+initialize()
+{
 
 s.top=-1;
 }
 
-isempty(){
+isempty()
+{
 
-if(s.top==-1){
+if(s.top==-1)
+{
     return TRUE;
 }
-else{
+else
+{
     return FALSE;
 }
 }
 
 
-push(int x){
-if(s.top==MAXSIZE){
+push(int x)
+{
+if(s.top==MAXSIZE)
+{
     printf("overflow");
     return;
 }

@@ -1,0 +1,26 @@
+l=[]
+toys=["GIANT-TEDDY-BEAR","GIRAFFE","CAT","MEGA-BEAR","DOG"
+  ,"LION","BILLY-BEAR","BESTY-BEAR","MONKEY","BOBBY-BEAR","BUNNY-RABBIT"
+  ,"BENJAMIN-BEAR","KUNG-FU-PANDA","BROWN-BEAR","PINK-BEAR","BABY-ELEPHATN"
+  ,"BLUE-FISH","HIPPO","CUTE-PIG","PIKACHU","DOREMON","TORTOISE",
+  "CATER-PILLAR","CANDY-DOLL"]
+N=input()
+if N.isdigit()== True:
+    if(int(N)<1 or int(N)> len(toys)):
+        print('ITEM UNAVAILABLE')
+    else:
+        c=int(N)    
+        del toys[c-1] 
+        for i in toys:
+            k=str(toys.index(i)+1)+'.'+ i
+            l.append(k)
+            print(k, end=' ')
+elif N.isalpha()==True:
+    if(N not in  toys):
+        print('ITEM UNAVAILABLE')
+    else:
+        toys.remove(N)
+        for i in toys:
+            k=str(toys.index(i)+1)+'.'+ i
+            l.append(k)
+            print(k, end='')

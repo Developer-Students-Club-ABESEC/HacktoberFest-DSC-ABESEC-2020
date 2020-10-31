@@ -9,7 +9,7 @@ def TowerOfHanoi(n , from_rod, to_rod, aux_rod):
 	TowerOfHanoi(n-1, aux_rod, to_rod, from_rod) 
 		
 # Driver code 
-n = 4
+n =int(input("enter no of rings"))	     
 TowerOfHanoi(n, 'A', 'C', 'B') 
 # A, C, B are the name of rods 
 

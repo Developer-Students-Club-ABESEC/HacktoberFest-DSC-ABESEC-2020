@@ -1,0 +1,22 @@
+def check_pallindrome(N ):
+    length = len(N )
+    if length ==1:
+        return True
+    for i in range(length//2):
+        if (N [i] != N [-i-1]):
+            return False
+    return True
+
+def function(N):
+    for j in range(1,len(N )-2):
+        if check_pallindrome(N [:j]):
+            for k in range(j+1,len(N )):
+                if check_pallindrome(N [j:k]) and check_pallindrome(N [k:]):
+                    print(N [:j])
+                    print(N [j:k])
+                    print(N [k:])
+                    return
+    print("impossible")
+N = input()
+length = len(N )
+function(N)

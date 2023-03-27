@@ -1,0 +1,22 @@
+bag=int(input("Enter the number of bag"))
+weight=[]
+i=0
+trip=0
+while(i<bag):
+    weight.append(float(input('weight')))
+    i+=1
+
+j=0
+weight.sort()
+print(weight)
+while(j<bag):
+    k=bag-j-1
+    if(weight[k]>1.99):
+        trip+=1
+        j+=1
+    elif(weight[k]<=1.99):
+        j+=1
+        trip+=1
+    if(j>=k):
+        break
+print(trip)
